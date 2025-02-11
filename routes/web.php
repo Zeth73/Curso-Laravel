@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', HomeController::class);
 
        //Tipo de petición que se esta realizando
 Route::get('/post', [PostController::class, 'index']);
