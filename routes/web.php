@@ -7,17 +7,19 @@
 
 <?php
 
-use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return "Welcome to the Liz Page :D";
-    //return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+
+Route::get('/', [HomeController::class, 'index']);
 
        //Tipo de petición que se esta realizando
-Route::get('/post',function(){
-    return "Post generales";
-});
+Route::get('/post', [PostController::class, 'index']);
+
+Route::get('/post/create',[PostController::class, 'create']);
+
+Route::get('/post/{show}', [PostController::class, 'show']);
 
 //'Definir rutas variables
 //Opción 1
